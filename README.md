@@ -48,7 +48,6 @@ Data Collection → Data Cleaning → EDA → Feature Engineering → Model Buil
 | Avg. Salary by Education Level & Gender | `Images/02_salary_by_education_gender.png` |
 | Years of Experience vs Salary | `Images/03_experience_vs_salary.png` |
 | Top 10 Highest-Paying Job Titles | `Images/04_top_paying_job_titles.png` |
-| Salary by Engineered Experience Bucket | `Images/05_salary_by_experience_level.png` |
 
 <p align="center">
   <img src="Images/01_salary_distribution.png" width="45%" />
