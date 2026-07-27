@@ -1,4 +1,26 @@
-streamlit==1.38.0
-pandas==2.2.2
-numpy==1.26.4
-scikit-learn==1.5.1
+# Web application framework
+streamlit==1.48.1
+
+# Data manipulation and analysis
+pandas==2.3.1
+
+# Numerical computing
+numpy==2.3.2
+
+# Machine Learning library
+scikit-learn==1.7.1
+
+# Saving and loading trained ML models
+joblib==1.5.1
+
+# Data visualization
+matplotlib==3.10.5
+
+# Statistical data visualization
+seaborn==0.13.2
+
+# Gradient Boosting Machine Learning library
+xgboost==3.0.4
+
+# Light Gradient Boosting Machine
+lightgbm==4.6.0
