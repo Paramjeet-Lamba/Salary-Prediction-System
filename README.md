@@ -120,17 +120,6 @@ AIML-Project-RollNo-2302221530074/
 └── requirement.txt
 ```
 
-## ▶️ How to Run
-
-```bash
-git clone https://github.com/<your-username>/AIML-Project-RollNo-2302221530074.git
-cd AIML-Project-RollNo-2302221530074
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
-jupyter notebook Notebook/Salary_Prediction.ipynb
-```
-
-Run all cells top to bottom — the notebook reads `../Dataset/Salary_Data.csv` and writes charts to `../Images/`, both relative to the `Notebook/` folder, so keep the folder structure intact.
-
 ## 🧰 Tech Stack
 
 `pandas` · `numpy` · `matplotlib` · `seaborn` · `scikit-learn` (LinearRegression)
