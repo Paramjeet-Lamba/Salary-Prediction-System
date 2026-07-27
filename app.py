@@ -11,6 +11,7 @@ st.set_page_config(page_title="Salary Predictor", page_icon="💼", layout="cent
 BASE_DIR = Path(__file__).parent
 DATA_PATH = BASE_DIR / "Dataset" / "Salary_Data.csv"
 MIN_COUNT = 5  # rare job-title grouping threshold, same as the notebook
+MIN_WORKING_AGE = 18  # assumed earliest age someone could start accumulating experience
 
 
 # ------------------------------------------------------------------
@@ -159,7 +160,22 @@ with col1:
     gender = st.selectbox("Gender", meta["genders"])
     education = st.selectbox("Education Level", meta["educations"])
 with col2:
-    experience = st.slider("Years of Experience", 0.0, meta["exp_max"], 5.0, step=0.5)
+    # Experience can never exceed the years available since MIN_WORKING_AGE,
+    # so cap the slider dynamically based on the selected age. This prevents
+    # physically impossible combinations (e.g. Age=25, Experience=25) from
+    # ever being sent to the model, which would otherwise extrapolate wildly
+    # and return a meaningless prediction.
+    max_possible_exp = float(min(meta["exp_max"], max(0.0, age - MIN_WORKING_AGE)))
+    default_exp = min(5.0, max_possible_exp)
+
+    if max_possible_exp <= 0:
+        st.slider("Years of Experience", 0.0, 0.1, 0.0, step=0.5, disabled=True)
+        experience = 0.0
+        st.caption(f"At age {age}, no work experience is possible yet.")
+    else:
+        experience = st.slider(
+            "Years of Experience", 0.0, max_possible_exp, default_exp, step=0.5
+        )
     job_title = st.selectbox("Job Title", meta["job_titles"])
 
 if st.button("Predict Salary", type="primary"):
@@ -175,4 +191,4 @@ st.divider()
 st.caption(
     "Note: predictions are estimates from a linear model trained on a small "
     "sample dataset and should support, not replace, human compensation judgment."
-)
+))
