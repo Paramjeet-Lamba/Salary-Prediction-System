@@ -191,4 +191,4 @@ st.divider()
 st.caption(
     "Note: predictions are estimates from a linear model trained on a small "
     "sample dataset and should support, not replace, human compensation judgment."
-))
+)
