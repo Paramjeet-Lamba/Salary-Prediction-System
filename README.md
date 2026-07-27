@@ -1,6 +1,6 @@
 # 💼 Salary Prediction using Age, Education, Job Title & Experience
 
-**HR Analytics Project**(https://salary-prediction-system-pl.streamlit.app)
+**HR Analytics Project** :- https://salary-prediction-system-pl.streamlit.app
 
 A Linear Regression model that predicts candidate salary from Age, Gender, Education Level, Job Title, and Years of Experience — built to support consistent, bias-aware compensation decisions during hiring, with a strong focus on feature engineering.
 
